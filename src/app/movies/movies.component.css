@@ -1,0 +1,205 @@
+.nav_upload {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+button.upload {
+  position: absolute;
+  right: 15px;
+  background-image: linear-gradient(120deg, #2e8a3a 0%, #91bf28 100%);
+  width: 140px;
+  height: 50px;
+  border-radius: 4px;
+  box-shadow: #3b8018 0px 0px 20px;
+  opacity: 0.9;
+  cursor: pointer;
+  /* transition: 1s ease-in-out;     */
+}
+
+
+.content {
+  position: fixed;
+  top: 14vh;
+  height: 50px;
+  width: 100%;
+  background-color: #2b2b31;
+  z-index: 10;
+  padding-top: 55px;
+}
+
+
+button.upload1 {
+  position: relative;
+  background-image: linear-gradient(120deg, #2e8a3a 0%, #91bf28 100%);
+  width: 140px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: #3b8018 0px 0px 20px;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin-left: auto;
+}
+
+button.upload:hover,
+button.upload1:hover {
+  opacity: 1;
+}
+
+span.upload {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  user-select: none;
+}
+
+div.upload,
+div.update {
+  position: fixed;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  height: 65vh;
+  border-radius: 10px;
+  background-color: #28282d;
+  box-shadow: 0 5px 25px 0 #00000070;
+  padding: 40px 40px 0 50px;
+  overflow: auto;
+  display: none;
+  z-index: 100;
+}
+
+label {
+  color: whitesmoke;
+}
+
+.inp {
+  background-color: #2b2b31;
+  border: none;
+  height: 50px;
+  color: #fff;
+  font-size: 15px;
+  width: 15vw;
+  min-width: 150px;
+  color: #fff;
+  border-radius: 0;
+  padding: 15px 20px;
+  letter-spacing: 0.2px;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.input_d {
+  margin-right: 5vw;
+}
+
+label {
+  display: block;
+}
+
+input[type="file"] {
+  padding: 0;
+  background-color: transparent;
+}
+
+.close {
+  position: sticky;
+  width: 50px;
+  height: 50px;
+  right: -102px;
+  margin-right: -30px;
+  margin-top: -50px;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 1s;
+  opacity: 0.5;
+
+}
+
+.close:hover {
+  opacity: 0.8;
+}
+
+.c {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.c1 {
+  transform: rotate(-45deg);
+}
+
+.c2 {
+  transform: rotate(45deg);
+}
+
+.c:hover {
+  animation: c 1s;
+}
+
+.d {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sub {
+  position: absolute;
+  right: 5vw;
+  margin: 0;
+}
+
+.your_movies {
+  position: relative;
+  top: 270px;
+  padding-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__title {
+  margin: 5px 0 !important;
+}
+
+.card__content {
+  height: fit-content !important;
+}
+
+@media only screen and (min-width: 1200px) {
+
+  button.upload {
+    right: 13px;
+  }
+}
+
+
+@media only screen and (max-width: 1199px) {
+
+  button.upload {
+    right: 66px;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+  button.upload {
+    right: 15px !important;
+  }
+}

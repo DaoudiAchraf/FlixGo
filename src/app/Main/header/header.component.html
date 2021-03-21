@@ -1,0 +1,196 @@
+<!-- header -->
+<header class="header">
+	<div class="header__wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__content">
+						<!-- header logo -->
+						<a [routerLink]="['/']" class="header__logo">
+							<img src="assets/img/logo.svg" alt="">
+						</a>
+						<!-- end header logo -->
+
+						<!-- header nav -->
+						<ul class="header__nav">
+							<!-- dropdown -->
+							<li class="header__nav-item">
+								<a [routerLink]="['/']" class="dropdown-toggle header__nav-link" role="button"
+									id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Home</a>
+
+								<!-- <ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
+										<li><a [routerLink]="['/']" >Home slideshow bg</a></li>
+										<li><a [routerLink]="['/']" >Home static bg</a></li>
+									</ul> -->
+
+							</li>
+							<!-- end dropdown -->
+
+							<!-- dropdown -->
+
+              <li class="header__nav-item" >
+								<a  [routerLink]="['/Catalog1']" class="header__nav-link">Filtred Catalog</a>
+							</li>
+
+              <!--
+               <li class="header__nav-item" >
+                <a [routerLink]="['/SignIn']" *ngIf="!isAuthenticated" class="header__nav-link">Sign In</a>
+              </li>
+              -->
+
+              <li class="header__nav-item" *ngIf="!Admin && !Producer">
+                <a [routerLink]="['/Contact']" class="header__nav-link">Contact</a>
+              </li>
+
+              <li class="header__nav-item" *ngIf="!isAuthenticated" >
+                <a [routerLink]="['/SignUp']"  class="header__nav-link">Sign Up</a>
+              </li>
+
+
+              <li  *ngIf="Producer || Admin" class="header__nav-item">
+								<a [routerLink]="['/reservation']" class="header__nav-link" >Movies Planing</a>
+							</li>
+
+							<li  *ngIf="Producer || Admin" class="header__nav-item">
+								<a href="#" [routerLink]="['/Movies']" class="header__nav-link" >AddFilm</a>
+							</li>
+			
+
+              <li *ngIf="isAuthenticated && !Admin && !Producer" class="header__nav-item" >
+								<a [routerLink]="['/myreservations']" class="header__nav-link" >Cart</a>
+              </li>
+
+
+
+              <li class="dropdown header__nav-item" *ngIf="Admin || Producer">
+								<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#"
+									role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"><i class="icon ion-ios-more"></i></a>
+
+								<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore" >
+
+
+									<li *ngIf='!Admin'><a [routerLink]="['/Contact']">Contact</a></li>
+
+                  <li *ngIf="Admin" class="header__nav-item" >
+                    <a [routerLink]="['/AdminDashboard']" class="header__nav-link" >AdminD</a>
+                  </li>
+
+
+							<li  >
+								<a [routerLink]="['/myreservations']" >Cart</a>
+							</li>
+>
+
+
+								</ul>
+              </li>
+
+
+
+
+              <!--
+							<!-- dropdown
+							<li class="dropdown header__nav-item" *ngIf="isAuthenticated">
+								<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#"
+									role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"><i class="icon ion-ios-more"></i></a>
+
+								<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore" >
+
+                  <!--
+									<li><a [routerLink]="['/About']">About</a></li>
+
+
+
+							<li  *ngIf="Producer || Admin">
+								<a [routerLink]="['/reservation']" >Movies Planing</a>
+							</li>
+
+							<li  *ngIf="Producer || Admin">
+								<a href="#" [routerLink]="['/Movies']" >AddFilm</a>
+							</li>
+							<li *ngIf="Admin"  >
+								<a [routerLink]="['/AdminDashboard']" >AdminD</a>
+							</li>
+
+
+								</ul>
+              </li>
+            -->
+							<!-- end dropdown -->
+						</ul>
+						<!-- end header nav -->
+
+						<!-- header auth -->
+						<div class="header__auth">
+							<button (click)="search()"  class="header__search-btn" type="button">
+								<i class="icon ion-ios-search"></i>
+							</button>
+
+							<button [routerLink]="['/SignIn']" class="header__sign-in" *ngIf="!isAuthenticated">
+								<i class="icon ion-ios-log-in"></i>
+								<span>sign in</span>
+							</button>
+
+
+
+							<button [routerLink]="['/SignIn']" class="header__sign-in" *ngIf="isAuthenticated" (click)="onLogout()">
+								<i class="icon ion-ios-log-in"></i>
+								<span>Logout</span>
+							</button>
+						</div>
+						<!-- end header auth -->
+
+						<!-- header menu btn -->
+						<button class="header__btn" type="button">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<!-- end header menu btn -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <!-- header search -->
+  <!-- class="header__search" -->
+	<form action="#" class="" *ngIf="btn" @fade>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__search-content" >
+
+						<!-- <input type="text" placeholder="Search for a movie, TV Series that you are looking for"> -->
+						<div class="ng-autocomplete">
+						<ng-autocomplete
+							[data]="data"
+							[searchKeyword]="keyword"
+							(selected)='selectEvent($event)'
+							(inputChanged)='onChangeSearch($event)'
+							(inputFocused)='onFocused($event)'
+							[itemTemplate]="itemTemplate"
+							[notFoundTemplate]="notFoundTemplate"
+							>
+						</ng-autocomplete>
+
+						<ng-template  #itemTemplate let-item >
+						<a [innerHTML]="item.name"></a>
+						</ng-template>
+
+						<ng-template #notFoundTemplate let-notFound>
+						<div [innerHTML]="notFound"></div>
+						</ng-template>
+						</div>
+						<button (click)="goToMovie()" type="button">search</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!-- end header search -->
+</header>

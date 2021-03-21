@@ -1,0 +1,84 @@
+.aff
+{
+  margin-left: 197px;
+  margin-top:0px;
+}
+
+.bk
+{
+  background-image: url('../../assets/img/section/section.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  margin-top: 90px;
+}
+
+
+
+.bk2
+{
+width: 900px;
+}
+
+.bttn
+{
+  /* margin-top: 10px;
+  margin-left: 570px;
+  margin-bottom: 20px; */
+
+  /* margin-left: 1000px; */
+
+margin-top: 10px;
+margin-left: 10px;
+width: 190px;
+height: 35px;
+
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+padding: 2px 2px;
+
+}
+
+
+.navi
+{
+  width: 60;
+  margin-top: 10px;
+  margin-left: 500px;
+  float: left;
+  height: 48px;
+
+}
+
+
+.navi2
+{
+
+  float: left;
+
+}
+
+
+.example-margin {
+
+  width: 800px;
+
+
+  margin-left: 300px;
+  margin-top:10px;
+
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+
+
+
+}
+
